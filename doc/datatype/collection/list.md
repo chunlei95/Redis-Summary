@@ -112,11 +112,11 @@
     需要注意的是，如果list里没有存在key就会被当作空list处理，所以当 key 不存在的时候，这个命令会返回 0
 #### 返回值
     被移除的元素个数
-## blpop(http://www.redis.cn/commands/blpop.html)
+## [blpop](http://www.redis.cn/commands/blpop.html)
  
-## brpop(http://www.redis.cn/commands/brpop.html)
+## [brpop](http://www.redis.cn/commands/brpop.html)
  
-## brpoplpush(http://www.redis.cn/commands/brpoplpush.html)
+## [brpoplpush](http://www.redis.cn/commands/brpoplpush.html)
  
     
 
