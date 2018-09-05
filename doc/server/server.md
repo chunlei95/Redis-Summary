@@ -34,3 +34,45 @@
   删除当前数据库里面的所有数据。这个命令永远不会出现失败。这个操作的时间复杂度是O(N),N是当前数据库的keys数量
 ## [flushall](http://www.redis.cn/commands/flushall.html)
   删除所有数据库里面的所有数据，注意不是当前数据库，而是所有数据库。这个命令永远不会出现失败。这个操作的时间复杂度是O(N),N是数据库的数量
+## [client getname](http://www.redis.cn/commands/client-getname.html)
+#### 说明
+  获取当前连接由 client setname 设置的名字，如果没有设置，将返回一个空的回复
+#### 返回值
+  返回链接名字或者空(没有设置名字的时候)
+## [client setname](http://www.redis.cn/commands/client-setname.html)
+#### 命令格式
+  client setname <connection-name>
+#### 说明
+  为当前链接设置一个名称，标示当前连接，一个新创建的连接默认是没有名字的
+#### 返回值
+  如果设置成功返回OK
+## [client list](http://www.redis.cn/commands/client-list.html)
+#### 说明
+  获取所有连接到服务器的客户端信息和统计数据
+## [client kill](http://www.redis.cn/commands/client-kill.html)
+#### 命令格式
+    CLIENT KILL [ip:port] [ID client-id] [normal|slave|pubsub] [ADDR ip:port] [SKIPME yes/no]
+#### 说明
+  关闭一个指定的连接
+## [client pause](http://www.redis.cn/commands/client-pause.html)
+#### 命令格式
+  client pause < timeout >
+#### 说明
+  client pause是一个连接控制命令，能够在指定的时间内（以毫秒为单位）挂起所有Redis客户端
+#### 返回值
+  返回OK或者错误(如果timeout是无效的)
+## [command](http://www.redis.cn/commands/command.html)
+  返回redis所有的命令数组
+## [command count](http://www.redis.cn/commands/command-count.html)
+  返回redis命令的数量
+## [command getkeys](http://www.redis.cn/commands/command-getkeys.html)
+#### 命令格式
+  command getkeys <一条命令>
+#### 说明
+  从命令中获取命令中存在的所有的key
+## [command info](http://www.redis.cn/commands/command-info.html)
+#### 命令格式
+  command info <command-name> [command-name ...]
+#### 说明
+  获取命令的详情
+  
