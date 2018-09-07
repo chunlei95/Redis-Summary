@@ -25,3 +25,41 @@
     判断key是否存在
 #### 返回值
     如果key存在返回1，如果可以不存在返回0
+## [keys](http://www.redis.cn/commands/keys.html)
+#### 命令格式
+    keys <pattern>
+#### 说明
+    查询所有符合正则表达式pattern的key。(可能会出现阻塞服务器的问题)
+#### 返回值
+    所有符合条件的key
+## [type](http://www.redis.cn/commands/type.html)
+#### 命令格式
+    type <key>
+#### 说明
+    获取key存储的value的数据结构类型
+#### 返回值
+    返回key存储的value的数据结构类型，如果key不存在，则返回none
+## [rename](http://www.redis.cn/commands/rename.html)
+#### 命令格式
+    rename <key> <newkey>
+#### 说明
+    将key重命名为newkey，如果key与newkey相同，将返回一个错误。如果newkey已经存在，则值将被覆盖
+## [renamenx](http://www.redis.cn/commands/renamenx.html)
+#### 命令格式
+    renamenx <key> <newkey>
+#### 说明
+    当且仅当 newkey 不存在时，将 key 改名为 newkey 。当 key 不存在时，返回一个错误
+#### 返回值
+    修改成功返回1，如果newkey已经存在则返回0
+## [randomkey](http://www.redis.cn/commands/randomkey.html)
+#### 说明
+    从当前数据库返回一个随机的key，如果数据库没有任何key，返回nil，否则返回一个随机的key
+## [scan](http://www.redis.cn/commands/scan.html)
+## [move](http://www.redis.cn/commands/move.html)
+#### 命令格式
+    move <key> <db>
+#### 说明
+    将当前数据库的 key 移动到给定的数据库 db 当中。如果当前数据库(源数据库)和给定数据库(目标数据库)
+    有相同名字的给定 key ，或者 key 不存在于当前数据库，那么 MOVE 没有任何效果
+#### 返回值
+    移动成功返回1，失败则返回0
